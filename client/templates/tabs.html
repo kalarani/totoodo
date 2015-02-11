@@ -1,0 +1,47 @@
+<template name="tabs">
+	<ul class="nav nav-tabs">
+	  <li role="navigation" class="active"><a href="#current-tasks">Pending tasks <span class='badge'>{{incompleteTaskCount}}</span></a></li>
+	  <li role="navigation"><a href="#older-tasks">Completed tasks</a></li>
+	  <li role="navigation"><a href="#daily-chores">Daily Chores <span class='badge'>{{incompleteChoresCount}}</span></a></li>
+	  <li role="navigation"><a href="#organise">Prioritize</a></li>
+	</ul>
+	<div class="tab-content">
+	    <div role="tabpanel" class="tab-pane active" id="current-tasks">
+			{{> addNewTask}}
+			{{> tasks}}
+		</div>
+	    <div role="tabpanel" class="tab-pane" id="older-tasks"> {{> oldTasks}} </div>
+	    <div role="tabpanel" class="tab-pane" id="daily-chores">
+			{{> addNewChore}}
+			{{> chores}}
+		</div>
+		<div role="tabpanel" class="tab-pane" id="organise">
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-5 well list-group" id='urgentImportant'>
+					Urgent & Important
+						<div class='list-group-item'>The most important task</div>
+						<div class='list-group-item'>More important task</div>
+						<div class='list-group-item'>The most urgent task</div>
+						<div class='list-group-item'>More urgent task</div>
+				</div>
+				<div class="col-xs-5 well list-group" id='urgentNotImportant'>
+					Urgent & Not Important
+						<div class='list-group-item'>The least important task</div>
+						<div class='list-group-item'>less important task</div>
+						<div class='list-group-item'>The least urgent task</div>
+						<div class='list-group-item'>less urgent task</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-5 well">Not Urgent & Important</div>
+				<div class="col-xs-5 well">Not Urgent & Not Important</div>
+			</div>
+		</div>
+	  </div>
+</template>
+
+<template name="oldTasks">
+	<p>History is very important</p>
+	{{> pagesNav}}
+	{{> pages}}
+</template>

@@ -1,0 +1,15 @@
+<template name="task">
+	<!--div class='row {{#if done}}active{{/if}}'-->
+	<tr>
+		<td class="col-xs-1">
+    		<input type="checkbox" checked="{{done}}" class="toggle-task" />
+		</td>
+		<td class="col-xs-7">
+		{{text}}
+		</td>
+		<td class="col-xs-1">
+			<input type="button" class="btn btn-default delete-task" value="&times;"/>
+		</td>
+	</tr>
+	<!--/div-->
+</template>
